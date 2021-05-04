@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="AccessoriesStore.AddProductControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AccessoriesStore"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="700" d:DesignWidth="1320" Background="{x:Null}">
+
+    <Grid x:Name="AddProduct">
+        <materialDesign:TransitioningContent  Grid.Row="0" x:Name="TrainsitionigContentSlide1" OpeningEffect="{materialDesign:TransitionEffect SlideInFromBottom, Duration=0:0:0.5}">
+            <Border Background="White" VerticalAlignment="Center" Width="450"
+                Padding="30" CornerRadius="20" Grid.ColumnSpan="2">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="LightGray" ShadowDepth="0" />
+                </Border.Effect>
+                <StackPanel>
+                    <TextBlock Text="Добавление продукта" FontSize="24" HorizontalAlignment="Center" FontWeight="Bold" Margin="0 10 0 20" Foreground="Black" />
+                    <ComboBox x:Name="comboBox_Product" materialDesign:HintAssist.Hint="Выберите продукт" Style="{StaticResource MaterialDesignComboBox}" Foreground="Black">
+                        <TextBlock>Процессор</TextBlock> 
+                        <TextBlock>Видеокарта</TextBlock>
+                        <TextBlock>Оперативная память</TextBlock>
+                        <TextBlock>Материнская плата</TextBlock>
+                        <TextBlock>Блок питания</TextBlock>
+                        <TextBlock>HDD/SSD</TextBlock>
+                    </ComboBox>
+                    <TextBox x:Name="textBox_Name" materialDesign:HintAssist.Hint="Название" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="Black"/>
+                    <TextBox x:Name="textBox_Price" materialDesign:HintAssist.Hint="Цена (руб.)" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="Black"/>
+                    <DatePicker x:Name="arrivalDate" materialDesign:HintAssist.Hint="Дата поступления" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Foreground="Black"></DatePicker>
+                    <Grid Grid.Row="2" Background="White" VerticalAlignment="Center">
+                        <Button x:Name="Specifications" Content="Характеристики" Margin="0 20 0 0" Style="{StaticResource MaterialDesignFlatButton}" Click="specificationsButton_Click"/>
+                    </Grid>
+                    <StackPanel>
+                        <Grid>
+                            <Button Content="Добавить" Margin="0 20 265 0" Click="AddProductButton_Click"/>
+                            <Button Content="Отмена" Margin="265 20 0 0" Click="CancelButton_Click"/>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

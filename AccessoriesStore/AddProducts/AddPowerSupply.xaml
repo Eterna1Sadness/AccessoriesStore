@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="AccessoriesStore.AddPowerSupply"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AccessoriesStore"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="368" d:DesignWidth="500" Background="{x:Null}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="White" Width="500" CornerRadius="20 20 0 0">
+            <TextBlock Text="Заполните все поля" FontSize="20" FontWeight="Bold" Foreground="Black" 
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        </Border>
+
+        <Border Grid.Row="1" Background="White" VerticalAlignment="Center"
+                Padding="30 0 30 30" Width="500">
+            <StackPanel>
+                <TextBox x:Name="textBox_PSPower" materialDesign:HintAssist.Hint="Мощность" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_PowerSupplyStandart" materialDesign:HintAssist.Hint="Стандарт блока питания" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_MaxLineCurrent12V" materialDesign:HintAssist.Hint="Макс. ток по линии +12V" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_PFC" materialDesign:HintAssist.Hint="Коррекция фактора мощности (PFC)" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_PowerSupplyConnectors" materialDesign:HintAssist.Hint="Разъемы блока питания" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_Dimensions" materialDesign:HintAssist.Hint="Габариты" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Row="2" Background="White" CornerRadius="0 0 20 20">
+            <Grid >
+                <Button Content="Добавить" Margin="15 0 265 0" Click="AddPSButton_Click"/>
+                <Button Content="Отмена" Margin="265 0 15 0" Click="CancelButton_Click"/>
+            </Grid>
+        </Border>
+        
+    </Grid>
+</UserControl>

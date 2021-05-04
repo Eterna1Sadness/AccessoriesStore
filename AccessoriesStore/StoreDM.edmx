@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище AccessoriesModel1" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Products" Type="varchar" MaxLength="50" />
+          <Property Name="TotalAmount" Type="varchar" MaxLength="50" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductCPUID" Type="int" Nullable="false" />
+          <Property Name="CPUManufacturer" Type="varchar" MaxLength="50" />
+          <Property Name="Lineup" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryType" Type="varchar" MaxLength="50" />
+          <Property Name="CoolingIncluded" Type="varchar" MaxLength="50" />
+          <Property Name="CrystalCodeName" Type="varchar" MaxLength="50" />
+          <Property Name="Socket" Type="varchar" MaxLength="50" />
+          <Property Name="Cores" Type="varchar" MaxLength="50" />
+          <Property Name="MaxNumberThreads" Type="varchar" MaxLength="50" />
+          <Property Name="BaseClockFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="MaxClockFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="MemorySupport" Type="varchar" MaxLength="50" />
+          <Property Name="MaxMemoryFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="IntegratedPCIExpressController" Type="varchar" MaxLength="50" />
+          <Property Name="TDP" Type="varchar" MaxLength="50" />
+          <Property Name="KernelMultithreading" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GPU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductGPUID" Type="int" Nullable="false" />
+          <Property Name="GPUInterface" Type="varchar" MaxLength="50" />
+          <Property Name="GPUManufacturer" Type="varchar" MaxLength="50" />
+          <Property Name="GraphicsProcessor" Type="varchar" MaxLength="50" />
+          <Property Name="GPUFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="GPUTurboFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="NumberStreamProcessors" Type="varchar" MaxLength="50" />
+          <Property Name="VideoMemory" Type="varchar" MaxLength="50" />
+          <Property Name="VideoMemoryType" Type="varchar" MaxLength="50" />
+          <Property Name="EffectiveMemoryFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="MemoryBandwidth" Type="varchar" MaxLength="50" />
+          <Property Name="MemoryBusWidth" Type="varchar" MaxLength="50" />
+          <Property Name="DirectXSupport" Type="varchar" MaxLength="50" />
+          <Property Name="PowerConnectors" Type="varchar" MaxLength="50" />
+          <Property Name="RecommendedPowerSupply" Type="varchar" MaxLength="50" />
+          <Property Name="Cooling" Type="varchar" MaxLength="50" />
+          <Property Name="NumberFans" Type="varchar" MaxLength="50" />
+          <Property Name="VideoCardDimensions" Type="varchar" MaxLength="50" />
+          <Property Name="Interfaces" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HDDSSD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductHDDSSDID" Type="int" Nullable="false" />
+          <Property Name="DiskType" Type="varchar" MaxLength="50" />
+          <Property Name="Volume" Type="varchar" MaxLength="50" />
+          <Property Name="FormFactor" Type="varchar" MaxLength="50" />
+          <Property Name="Interface" Type="varchar" MaxLength="50" />
+          <Property Name="Bufer" Type="varchar" MaxLength="50" />
+          <Property Name="SequentialReadSpeed" Type="varchar" MaxLength="50" />
+          <Property Name="SequentiaWriteSpeed" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductMBID" Type="int" Nullable="false" />
+          <Property Name="ProcessorSupport" Type="varchar" MaxLength="50" />
+          <Property Name="Socket" Type="varchar" MaxLength="50" />
+          <Property Name="Chipset" Type="varchar" MaxLength="50" />
+          <Property Name="FormFactor" Type="varchar" MaxLength="50" />
+          <Property Name="MemoryType" Type="varchar" MaxLength="50" />
+          <Property Name="NumberMemorySlots" Type="varchar" MaxLength="50" />
+          <Property Name="MaximumMemorySize" Type="varchar" MaxLength="50" />
+          <Property Name="MemoryMode" Type="varchar" MaxLength="50" />
+          <Property Name="MaximumMemoryFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="StorageInterfaces" Type="varchar" MaxLength="50" />
+          <Property Name="NetworkAndCommunication" Type="varchar" MaxLength="50" />
+          <Property Name="AudioAndVideo" Type="varchar" MaxLength="50" />
+          <Property Name="RearPanelConnectors" Type="varchar" MaxLength="50" />
+          <Property Name="InternalConnectors" Type="varchar" MaxLength="50" />
+          <Property Name="OverallDimensions" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PowerSupply">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductPSID" Type="int" Nullable="false" />
+          <Property Name="PSPower" Type="varchar" MaxLength="50" />
+          <Property Name="PowerSupplyStandard" Type="varchar" MaxLength="50" />
+          <Property Name="MaxLineCurrent12V" Type="varchar" MaxLength="50" />
+          <Property Name="PFC" Type="varchar" MaxLength="50" />
+          <Property Name="PowerSupplyConnectors" Type="varchar" MaxLength="50" />
+          <Property Name="Dimensions" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProductType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductAvailability" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductPrice" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ArrivalDate" Type="date" Nullable="false" />
+          <Property Name="ExpenseDate" Type="date" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductRAMID" Type="int" Nullable="false" />
+          <Property Name="RAMSet" Type="varchar" MaxLength="50" />
+          <Property Name="RAMVolume" Type="varchar" MaxLength="50" />
+          <Property Name="RAMType" Type="varchar" MaxLength="50" />
+          <Property Name="RAMFrequency" Type="varchar" MaxLength="50" />
+          <Property Name="CASLatency" Type="varchar" MaxLength="50" />
+          <Property Name="Timing" Type="varchar" MaxLength="50" />
+          <Property Name="SupplyVoltage" Type="varchar" MaxLength="50" />
+          <Property Name="ChipLocation" Type="varchar" MaxLength="50" />
+          <Property Name="NumberMicrocircuits" Type="varchar" MaxLength="50" />
+          <Property Name="CapacityMicrocircuits" Type="varchar" MaxLength="50" />
+          <Property Name="TypeMicrocircuits" Type="varchar" MaxLength="50" />
+          <Property Name="XMPprofiles" Type="varchar" MaxLength="50" />
+          <Property Name="AMPprofiles" Type="varchar" MaxLength="50" />
+          <Property Name="Cooling" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Specialist">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SpecialistLogin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SpecialistPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProductCPUID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CPU" Type="Self.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="ProductCPUID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductGPUID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GPU" Type="Self.GPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GPU">
+              <PropertyRef Name="ProductGPUID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductHDDSSDID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HDDSSD" Type="Self.HDDSSD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HDDSSD">
+              <PropertyRef Name="ProductHDDSSDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductMBID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ProductMBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductPSID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PowerSupply" Type="Self.PowerSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PowerSupply">
+              <PropertyRef Name="ProductPSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductRAMID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ProductRAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище AccessoriesModel1Container">
+          <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CPU" EntityType="Self.CPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GPU" EntityType="Self.GPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HDDSSD" EntityType="Self.HDDSSD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerSupply" EntityType="Self.PowerSupply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specialist" EntityType="Self.Specialist" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ProductCPUID_To_Product" Association="Self.FK_ProductCPUID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductGPUID_To_Product" Association="Self.FK_ProductGPUID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="GPU" EntitySet="GPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductHDDSSDID_To_Product" Association="Self.FK_ProductHDDSSDID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="HDDSSD" EntitySet="HDDSSD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductID_To_Product" Association="Self.FK_ProductID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductMBID_To_Product" Association="Self.FK_ProductMBID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPSID_To_Product" Association="Self.FK_ProductPSID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="PowerSupply" EntitySet="PowerSupply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductRAMID_To_Product" Association="Self.FK_ProductRAMID_To_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AccessoriesModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Products" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductID_To_Product" FromRole="Basket" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCPUID" Type="Int32" Nullable="false" />
+          <Property Name="CPUManufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lineup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CoolingIncluded" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CrystalCodeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Socket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cores" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxNumberThreads" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BaseClockFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxClockFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemorySupport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxMemoryFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IntegratedPCIExpressController" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TDP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KernelMultithreading" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductCPUID_To_Product" FromRole="CPU" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="GPU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGPUID" Type="Int32" Nullable="false" />
+          <Property Name="GPUInterface" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GPUManufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GraphicsProcessor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GPUFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GPUTurboFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberStreamProcessors" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VideoMemory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VideoMemoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EffectiveMemoryFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemoryBandwidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemoryBusWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DirectXSupport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PowerConnectors" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RecommendedPowerSupply" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cooling" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberFans" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VideoCardDimensions" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Interfaces" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductGPUID_To_Product" FromRole="GPU" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="HDDSSD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductHDDSSDID" Type="Int32" Nullable="false" />
+          <Property Name="DiskType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Volume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FormFactor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Interface" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bufer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SequentialReadSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SequentiaWriteSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductHDDSSDID_To_Product" FromRole="HDDSSD" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductMBID" Type="Int32" Nullable="false" />
+          <Property Name="ProcessorSupport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Socket" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Chipset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FormFactor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberMemorySlots" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaximumMemorySize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemoryMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaximumMemoryFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StorageInterfaces" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NetworkAndCommunication" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AudioAndVideo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RearPanelConnectors" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InternalConnectors" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverallDimensions" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductMBID_To_Product" FromRole="Motherboard" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="PowerSupply">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductPSID" Type="Int32" Nullable="false" />
+          <Property Name="PSPower" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PowerSupplyStandard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaxLineCurrent12V" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PFC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PowerSupplyConnectors" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dimensions" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductPSID_To_Product" FromRole="PowerSupply" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductAvailability" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ArrivalDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpenseDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Baskets" Relationship="Self.FK_ProductID_To_Product" FromRole="Product" ToRole="Basket" />
+          <NavigationProperty Name="CPUs" Relationship="Self.FK_ProductCPUID_To_Product" FromRole="Product" ToRole="CPU" />
+          <NavigationProperty Name="GPUs" Relationship="Self.FK_ProductGPUID_To_Product" FromRole="Product" ToRole="GPU" />
+          <NavigationProperty Name="HDDSSDs" Relationship="Self.FK_ProductHDDSSDID_To_Product" FromRole="Product" ToRole="HDDSSD" />
+          <NavigationProperty Name="Motherboards" Relationship="Self.FK_ProductMBID_To_Product" FromRole="Product" ToRole="Motherboard" />
+          <NavigationProperty Name="PowerSupplies" Relationship="Self.FK_ProductPSID_To_Product" FromRole="Product" ToRole="PowerSupply" />
+          <NavigationProperty Name="RAMs" Relationship="Self.FK_ProductRAMID_To_Product" FromRole="Product" ToRole="RAM" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductRAMID" Type="Int32" Nullable="false" />
+          <Property Name="RAMSet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RAMVolume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RAMType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RAMFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CASLatency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Timing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SupplyVoltage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChipLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberMicrocircuits" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CapacityMicrocircuits" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TypeMicrocircuits" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="XMPprofiles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMPprofiles" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cooling" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductRAMID_To_Product" FromRole="RAM" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Specialist">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SpecialistLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SpecialistPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProductID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCPUID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CPU" Type="Self.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="ProductCPUID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductGPUID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GPU" Type="Self.GPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GPU">
+              <PropertyRef Name="ProductGPUID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductHDDSSDID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HDDSSD" Type="Self.HDDSSD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HDDSSD">
+              <PropertyRef Name="ProductHDDSSDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductMBID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ProductMBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductPSID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PowerSupply" Type="Self.PowerSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PowerSupply">
+              <PropertyRef Name="ProductPSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductRAMID_To_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ProductRAMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AccessoriesStoreDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Baskets" EntityType="Self.Basket" />
+          <EntitySet Name="CPUs" EntityType="Self.CPU" />
+          <EntitySet Name="GPUs" EntityType="Self.GPU" />
+          <EntitySet Name="HDDSSDs" EntityType="Self.HDDSSD" />
+          <EntitySet Name="Motherboards" EntityType="Self.Motherboard" />
+          <EntitySet Name="PowerSupplies" EntityType="Self.PowerSupply" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="RAMs" EntityType="Self.RAM" />
+          <EntitySet Name="Specialists" EntityType="Self.Specialist" />
+          <AssociationSet Name="FK_ProductID_To_Product" Association="Self.FK_ProductID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Basket" EntitySet="Baskets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCPUID_To_Product" Association="Self.FK_ProductCPUID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="CPU" EntitySet="CPUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductGPUID_To_Product" Association="Self.FK_ProductGPUID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="GPU" EntitySet="GPUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductHDDSSDID_To_Product" Association="Self.FK_ProductHDDSSDID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="HDDSSD" EntitySet="HDDSSDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductMBID_To_Product" Association="Self.FK_ProductMBID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Motherboard" EntitySet="Motherboards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPSID_To_Product" Association="Self.FK_ProductPSID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="PowerSupply" EntitySet="PowerSupplies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductRAMID_To_Product" Association="Self.FK_ProductRAMID_To_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="RAM" EntitySet="RAMs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AccessoriesModel1Container" CdmEntityContainer="AccessoriesStoreDB">
+          <EntitySetMapping Name="Baskets">
+            <EntityTypeMapping TypeName="AccessoriesModel1.Basket">
+              <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Products" ColumnName="Products" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CPUs">
+            <EntityTypeMapping TypeName="AccessoriesModel1.CPU">
+              <MappingFragment StoreEntitySet="CPU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductCPUID" ColumnName="ProductCPUID" />
+                <ScalarProperty Name="CPUManufacturer" ColumnName="CPUManufacturer" />
+                <ScalarProperty Name="Lineup" ColumnName="Lineup" />
+                <ScalarProperty Name="DeliveryType" ColumnName="DeliveryType" />
+                <ScalarProperty Name="CoolingIncluded" ColumnName="CoolingIncluded" />
+                <ScalarProperty Name="CrystalCodeName" ColumnName="CrystalCodeName" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Cores" ColumnName="Cores" />
+                <ScalarProperty Name="MaxNumberThreads" ColumnName="MaxNumberThreads" />
+                <ScalarProperty Name="BaseClockFrequency" ColumnName="BaseClockFrequency" />
+                <ScalarProperty Name="MaxClockFrequency" ColumnName="MaxClockFrequency" />
+                <ScalarProperty Name="MemorySupport" ColumnName="MemorySupport" />
+                <ScalarProperty Name="MaxMemoryFrequency" ColumnName="MaxMemoryFrequency" />
+                <ScalarProperty Name="IntegratedPCIExpressController" ColumnName="IntegratedPCIExpressController" />
+                <ScalarProperty Name="TDP" ColumnName="TDP" />
+                <ScalarProperty Name="KernelMultithreading" ColumnName="KernelMultithreading" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GPUs">
+            <EntityTypeMapping TypeName="AccessoriesModel1.GPU">
+              <MappingFragment StoreEntitySet="GPU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductGPUID" ColumnName="ProductGPUID" />
+                <ScalarProperty Name="GPUInterface" ColumnName="GPUInterface" />
+                <ScalarProperty Name="GPUManufacturer" ColumnName="GPUManufacturer" />
+                <ScalarProperty Name="GraphicsProcessor" ColumnName="GraphicsProcessor" />
+                <ScalarProperty Name="GPUFrequency" ColumnName="GPUFrequency" />
+                <ScalarProperty Name="GPUTurboFrequency" ColumnName="GPUTurboFrequency" />
+                <ScalarProperty Name="NumberStreamProcessors" ColumnName="NumberStreamProcessors" />
+                <ScalarProperty Name="VideoMemory" ColumnName="VideoMemory" />
+                <ScalarProperty Name="VideoMemoryType" ColumnName="VideoMemoryType" />
+                <ScalarProperty Name="EffectiveMemoryFrequency" ColumnName="EffectiveMemoryFrequency" />
+                <ScalarProperty Name="MemoryBandwidth" ColumnName="MemoryBandwidth" />
+                <ScalarProperty Name="MemoryBusWidth" ColumnName="MemoryBusWidth" />
+                <ScalarProperty Name="DirectXSupport" ColumnName="DirectXSupport" />
+                <ScalarProperty Name="PowerConnectors" ColumnName="PowerConnectors" />
+                <ScalarProperty Name="RecommendedPowerSupply" ColumnName="RecommendedPowerSupply" />
+                <ScalarProperty Name="Cooling" ColumnName="Cooling" />
+                <ScalarProperty Name="NumberFans" ColumnName="NumberFans" />
+                <ScalarProperty Name="VideoCardDimensions" ColumnName="VideoCardDimensions" />
+                <ScalarProperty Name="Interfaces" ColumnName="Interfaces" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HDDSSDs">
+            <EntityTypeMapping TypeName="AccessoriesModel1.HDDSSD">
+              <MappingFragment StoreEntitySet="HDDSSD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductHDDSSDID" ColumnName="ProductHDDSSDID" />
+                <ScalarProperty Name="DiskType" ColumnName="DiskType" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="Bufer" ColumnName="Bufer" />
+                <ScalarProperty Name="SequentialReadSpeed" ColumnName="SequentialReadSpeed" />
+                <ScalarProperty Name="SequentiaWriteSpeed" ColumnName="SequentiaWriteSpeed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboards">
+            <EntityTypeMapping TypeName="AccessoriesModel1.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboard">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductMBID" ColumnName="ProductMBID" />
+                <ScalarProperty Name="ProcessorSupport" ColumnName="ProcessorSupport" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Chipset" ColumnName="Chipset" />
+                <ScalarProperty Name="FormFactor" ColumnName="FormFactor" />
+                <ScalarProperty Name="MemoryType" ColumnName="MemoryType" />
+                <ScalarProperty Name="NumberMemorySlots" ColumnName="NumberMemorySlots" />
+                <ScalarProperty Name="MaximumMemorySize" ColumnName="MaximumMemorySize" />
+                <ScalarProperty Name="MemoryMode" ColumnName="MemoryMode" />
+                <ScalarProperty Name="MaximumMemoryFrequency" ColumnName="MaximumMemoryFrequency" />
+                <ScalarProperty Name="StorageInterfaces" ColumnName="StorageInterfaces" />
+                <ScalarProperty Name="NetworkAndCommunication" ColumnName="NetworkAndCommunication" />
+                <ScalarProperty Name="AudioAndVideo" ColumnName="AudioAndVideo" />
+                <ScalarProperty Name="RearPanelConnectors" ColumnName="RearPanelConnectors" />
+                <ScalarProperty Name="InternalConnectors" ColumnName="InternalConnectors" />
+                <ScalarProperty Name="OverallDimensions" ColumnName="OverallDimensions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerSupplies">
+            <EntityTypeMapping TypeName="AccessoriesModel1.PowerSupply">
+              <MappingFragment StoreEntitySet="PowerSupply">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductPSID" ColumnName="ProductPSID" />
+                <ScalarProperty Name="PSPower" ColumnName="PSPower" />
+                <ScalarProperty Name="PowerSupplyStandard" ColumnName="PowerSupplyStandard" />
+                <ScalarProperty Name="MaxLineCurrent12V" ColumnName="MaxLineCurrent12V" />
+                <ScalarProperty Name="PFC" ColumnName="PFC" />
+                <ScalarProperty Name="PowerSupplyConnectors" ColumnName="PowerSupplyConnectors" />
+                <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="AccessoriesModel1.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductAvailability" ColumnName="ProductAvailability" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="ExpenseDate" ColumnName="ExpenseDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAMs">
+            <EntityTypeMapping TypeName="AccessoriesModel1.RAM">
+              <MappingFragment StoreEntitySet="RAM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductRAMID" ColumnName="ProductRAMID" />
+                <ScalarProperty Name="RAMSet" ColumnName="RAMSet" />
+                <ScalarProperty Name="RAMVolume" ColumnName="RAMVolume" />
+                <ScalarProperty Name="RAMType" ColumnName="RAMType" />
+                <ScalarProperty Name="RAMFrequency" ColumnName="RAMFrequency" />
+                <ScalarProperty Name="CASLatency" ColumnName="CASLatency" />
+                <ScalarProperty Name="Timing" ColumnName="Timing" />
+                <ScalarProperty Name="SupplyVoltage" ColumnName="SupplyVoltage" />
+                <ScalarProperty Name="ChipLocation" ColumnName="ChipLocation" />
+                <ScalarProperty Name="NumberMicrocircuits" ColumnName="NumberMicrocircuits" />
+                <ScalarProperty Name="CapacityMicrocircuits" ColumnName="CapacityMicrocircuits" />
+                <ScalarProperty Name="TypeMicrocircuits" ColumnName="TypeMicrocircuits" />
+                <ScalarProperty Name="XMPprofiles" ColumnName="XMPprofiles" />
+                <ScalarProperty Name="AMPprofiles" ColumnName="AMPprofiles" />
+                <ScalarProperty Name="Cooling" ColumnName="Cooling" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialists">
+            <EntityTypeMapping TypeName="AccessoriesModel1.Specialist">
+              <MappingFragment StoreEntitySet="Specialist">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="SpecialistLogin" ColumnName="SpecialistLogin" />
+                <ScalarProperty Name="SpecialistPassword" ColumnName="SpecialistPassword" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

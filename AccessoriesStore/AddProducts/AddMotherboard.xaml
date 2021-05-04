@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="AccessoriesStore.AddMotherboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AccessoriesStore"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="464" d:DesignWidth="500" Background="{x:Null}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="2"  Background="White" Width="500" CornerRadius="20 20 0 0">
+            <TextBlock Text="Заполните все поля" FontSize="20" FontWeight="Bold" Foreground="Black"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="1" Background="White" VerticalAlignment="Center"
+                Padding="20">
+            <StackPanel>
+                <ComboBox x:Name="comboBox_ProcessorSupport" Margin="0 15 0 0" materialDesign:HintAssist.Hint="Поддержка процессоров" Foreground="Black" Style="{StaticResource MaterialDesignComboBox}">
+                    <TextBlock>AMD</TextBlock>
+                    <TextBlock>Intel</TextBlock>
+                </ComboBox>
+                <TextBox x:Name="textBox_Socket" materialDesign:HintAssist.Hint="Сокет" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_Chipset" materialDesign:HintAssist.Hint="Чипсет" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_FormFactor" materialDesign:HintAssist.Hint="Форм-фактор" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_MemoryType" materialDesign:HintAssist.Hint="Тип памяти" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_NumberMemorySlots" materialDesign:HintAssist.Hint="Количество слотов памяти" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_MaxMemorySize" materialDesign:HintAssist.Hint="Максимальный объём памяти" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_MemoryMode" materialDesign:HintAssist.Hint="Режим памяти" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Background="White" VerticalAlignment="Center"
+                Padding="20" Height="384" Grid.Row="1">
+            <StackPanel>
+                <TextBox x:Name="textBox_MaxMemoryFrequency" materialDesign:HintAssist.Hint="Максимальная частота памяти" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_ExpansionSlots" materialDesign:HintAssist.Hint="Слоты расширения" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_StorageInterfaces" materialDesign:HintAssist.Hint="Интерфейсы накопителей" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_NetworkAndCommunication" materialDesign:HintAssist.Hint="Сеть и связь" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_AudioAndVideo" materialDesign:HintAssist.Hint="Аудио и Видео" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_RearPanelConnectors" materialDesign:HintAssist.Hint="Разъемы на задней панели" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_InternalConnectors" materialDesign:HintAssist.Hint="Внутренние разъемы" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox x:Name="textBox_OveralDimensions" materialDesign:HintAssist.Hint="Габариты" Foreground="Black" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.ColumnSpan="2" Background="White" CornerRadius="0 0 20 20">
+            <Grid >
+                <Button Content="Добавить" Margin="15 0 265 0" Click="AddMBButton_Click"/>
+                <Button Content="Отмена" Margin="265 0 15 0" Click="CancelButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

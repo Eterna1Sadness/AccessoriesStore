@@ -1,0 +1,31 @@
+﻿<Window x:Class="AccessoriesStore.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccessoriesStore"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Authorization" AllowsTransparency="True" Height="506.608" Width="401.542" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Grid Background="#00000000">
+        <Border MinWidth="200" MaxWidth="350" Margin="15,77" Background="white" VerticalAlignment="Center"
+                Padding="30" CornerRadius="20" Grid.ColumnSpan="2">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Color="LightGray" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Авторизация" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center" />
+
+                <Grid Margin="0,0,0,20">
+                    <Button HorizontalAlignment="Left" Content="Регистрация" 
+                            Click="Button_Reg_Click"/>
+                    <Button HorizontalAlignment="Right" Content="Войти" Style="{StaticResource MaterialDesignFlatButton}" />
+                </Grid>
+                <TextBox x:Name="textBox_Login" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox x:Name="passwordBox_Password" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <Button Content="Войти" Margin="0,20, 0, 0" Click="Button_Auth_Click" />
+                <Button Content="Выйти" Margin="0,10" Click="ExitButton_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
